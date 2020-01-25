@@ -1,0 +1,39 @@
+Monitoring the diskspace:
+------------------------
+#!/bin/bash
+#purpose:Monitoring the disk space
+#version:
+#created date: Thu Jan 9 22:18:49 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+THRESHOLD=40
+mailto="root"
+HOSTNAME=$(hostname)
+for path in ` df -h | grep -vE 'Filesystem|tmpfs' | awk '{print $5}' | sed 's/%//g'`
+do
+        if [ $path -ge $THRESHOLD ]
+        then
+                df -h | grep $path% >> /tmp/temp
+        fi
+done
+VALUE=`cat /tmp/temp | wc -l`
+if [ $VALUE -ge 1 ]
+then
+        mail -s "$HOSTNAME Disk usage is critical" $mailto < /tmp/temp
+fi
+#rm -rf /tmp/temp
+#END
+
+kiran@kiran:/shellscript$ vi /tmp/temp
+/dev/loop3      4.2M  4.2M     0 100% /snap/gnome-calculator/406
+/dev/loop1       43M   43M     0 100% /snap/gtk-common-themes/1313
+/dev/loop0       15M   15M     0 100% /snap/gnome-characters/296
+/dev/loop5      4.3M  4.3M     0 100% /snap/gnome-calculator/544
+/dev/loop2      3.8M  3.8M     0 100% /snap/gnome-system-monitor/111
+/dev/loop4       55M   55M     0 100% /snap/core18/1066
+/dev/loop8      1.0M  1.0M     0 100% /snap/gnome-logs/61
+/dev/loop11     3.8M  3.8M     0 100% /snap/gnome-system-monitor/100
+/dev/loop7       15M   15M     0 100% /snap/gnome-characters/367
+/dev/loop6       45M   45M     0 100% /snap/gtk-common-themes/1353
+/dev/loop10     157M  157M     0 100% /snap/gnome-3-28-1804/110

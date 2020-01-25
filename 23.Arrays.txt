@@ -1,0 +1,26 @@
+Arrays:
+---------
+--->In shell scripting arrays are supporting for the korn and bach shell.It supported for the one-dimentional arrays.
+#!/bin/bash
+#purpose:Array example
+#version:
+#created date: Sun Jan 5 11:21:23 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+fruits =( "Apple" "Mango" "Banana" "Orange" )
+for fruit in ${fruits[@]}
+do
+        echo "The fruit name is $fruit"
+done
+echo "The number of fruits are ${#fruits[@]}"
+echo "The fruits are ${fruits[@]}"
+#END
+
+o/p:
+The fruit name is Apple
+The fruit name is Mango
+The fruit name is Banana
+The fruit name is Orange
+The number of fruits are 4
+The fruits are Apple Mango Banana Orange

@@ -1,0 +1,24 @@
+Flags or getopts:
+------------------
+--->The getopts is used by the shell procedure to pass positional parameters optstring contains the option characters to be recognized.
+#!/bin/bash
+#purpose:Getopts example working with arguments
+#version:
+#created date: Sun Jan 5 11:40:04 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+while getopts :a:b: options ;
+do
+        case $options in
+                a) ap=$OPTARG;;
+                b) bo=$OPTARG;;
+                ?) echo "I dont know what is $OPTARG is"
+        esac
+done
+echo "Option A = $ap and option B = $bo"
+#END
+
+kiran@kiran:/shellscript$ sh getopts.sh -a apple -b ball -h
+I dont know what is h is
+Option A = apple and option B = ball

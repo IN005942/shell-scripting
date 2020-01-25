@@ -1,0 +1,43 @@
+$*, $#, $1, $2, $0, "$@", $?, $$ and $!
+
+#*  --- it stores the complete set of positional parameter as single string
+$#  --- it is set to the number of arguments specified
+#1  --- first argument
+$2  --- second argument
+$0  --- name of executed command
+"$@" -- each quoted string treated as a seperate argument
+$?  --- exit status of the last command
+$$  --- PID of the current shell
+$!  --- PID of the last backgroud job
+
+$vi specialvariables
+
+#!/bin/bash
+#purpose:description of the special variable
+#version:
+#created date: Thu Jan 2 10:11:55 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo '$*' "output is $*"
+echo '$#' "output is $#"
+echo '$1 & $2' "output is $1 and $2"
+echo '$0' "your current program name is  $0"
+echo '$@' "output is $@"
+echo '$?' "output is $?"
+echo '$$' "output is $$"
+sleep 400 &
+echo '$!' "output is $!"
+#END
+
+--> sh specialvariables.sh kiran kumar nellore
+O/P:
+$* output is kiran kumar nellore
+$# output is 3
+$1 & $2 output is kiran and kumar
+$0 your current program name is  specialvariable.sh
+$@ output is kiran kumar nellore
+$? output is 0
+$$ output is 2462
+$! output is 2463
+

@@ -1,0 +1,26 @@
+Shifting the positions of the parameter from one position to another position automatically
+-------------------------------------------------------------------------------------------
+
+#!/bin/bash
+#purpose:Shifting positional paramters automatically
+#version:
+#created date: Sat Jan 4 12:05:42 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+set `date`
+echo "count $#"
+echo "$1 $2 $3 $4 $5"
+shift
+echo "$1 $2 $3 $4 $5"
+shift 2
+echo "$1 $2 $3 $4 $5"
+shift 3
+echo "$1 $2 $3 $4 $5"
+#END
+
+kiran@kiran:/shellscript$ sh shift-parameters.sh
+count 6
+Sat Jan 4 12:07:51 IST
+Jan 4 12:07:51 IST 2020
+12:07:51 IST 2020

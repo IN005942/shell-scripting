@@ -1,0 +1,165 @@
+Shell Script:
+--------------
+-->A unique shell programms interprets user commands which are either directly entered by the user or which can be red from the file    called the shell script or shell program.
+---> shell scripts are interpreted not compiled.
+
+Different types of shells:
+---------------------------
+# cat /etc/shells
+* /bin/sh
+* /bin/dash
+* bin/bash--------->we are going to learn
+* bin/rbash
+
+-->sh:  it stands for original shell which is used in the unique systems
+
+-->bash:  it stans for BORN AGAIN SHELL 
+
+Ex: hello world script
+# gedit hello.sh---->create file hello.sh
+	#! /bin/bas
+	echo "hello world"
+
+# ./hello.sh------>to excute the file and it shows below
+	hello world
+
+COMMENTS:
+------------
+-->comments are lines of codes which are not excuted by the script but are helpful to know some information about the script
+	# this is the comment
+	echo "hello world" # this is a comment and this
+			   ----------------------------- this is not going to be execcted
+	
+VARIABLES:
+----------
+-->Variables are the conatiners which stores the data inside it.
+-->two types of variable
+1)system variable---->created and maintained by the unix os
+---> This are defined in the capital letters	
+Ex:
+	echo $BASH           ------->/bin/bash
+	echo $BASH_VERSION   ------->/bin/bash 4.3.11(1)-release
+	echo $HOME           ------->/home/test
+	echo $PWD            -------->/home/test/Desktop
+	echo our shell name is $BASH
+	echo our present working direcctory is $PWD
+
+2)user defined variable----->created and maintained by the user
+----> mostly this are defined in the upper cases and capital cases also
+-----> variable name should not start with the number
+Ex:
+	name=Mark
+	echo the name is $name
+	VALUE=10
+	echo the value $VALUE
+		
+HOW TO READ THE INPUT FROM THE TERMINAL:
+----------------------------------------
+--->take the input from the keyboard
+--->command is "read"
+
+here below "name" is variable and when we run this script it ask the name then we are going to enter the name
+Ex:
+	echo "Enter name : "
+	read name
+	echo "Enter name : $name"
+
+we can use multiple variables also
+Ex2:	
+	echo "Enter names : "
+	read name1 name2 name3
+	echo "Names : $name1, $name2, $name3"
+
+we can print the name in a single line we can use the flag -p
+Ex:
+	read -p 'username : ' user_var
+	echo "username : $user_var"
+
+if we want to dont show the letters that what are we typing from the keyboard we can use the flag -s
+Ex:
+	read -p 'username : ' user_var
+	read -sp 'password : ' pass_var
+	echo
+	echo "username : $user_var"
+	echo "password : $pass_var"
+
+we can the extract the input as an array by using the flag -a
+Ex:
+	echo "Enter names : "
+	read -a names
+	echo "Names : ${names[0]}, ${names[1]}"
+
+Without writing the variable we can read the names by using the inbuild command $REPLAY
+Ex:
+	echo "Enter name : "
+	read
+	echo "name : $REPLAY"
+
+PASS ARGUMENTS TO BASH SCRIPT:
+------------------------------
+---> first way
+Ex:
+	echo $0 $1 $2 $3 'print the $0 $1 $2 $3'
+	run the below script in terminal 
+	# ./hello.sh kiran kumar nellore
+	the output is: 
+	./hello.sh kiran kumar nellore print the $0 $1 $2 $3
+
+--->second way of pass an arguments to the script as an array
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

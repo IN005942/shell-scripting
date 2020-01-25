@@ -1,0 +1,60 @@
+
+untill:
+-------
+---> It execute statement when the condition is false.
+
+untill [ expression ]
+do
+---
+---
+done
+
+#!/bin/bash
+#purpose:Untill loop example for host ping
+#version:
+#created date: Sun Jan 5 10:55:07 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the ip address to ping: \c"
+read -r ip
+until ping -c 3 $ip
+do
+        echo "Host $ip is shutdown"
+        sleep 1
+done
+echo "Host is up and running"
+#END
+
+kiran@kiran:/shellscript$ sh untill-loop.sh
+Enter the ip address to ping: 192.168.132.132
+PING 192.168.132.132 (192.168.132.132) 56(84) bytes of data.
+64 bytes from 192.168.132.132: icmp_seq=1 ttl=64 time=0.037 ms
+64 bytes from 192.168.132.132: icmp_seq=2 ttl=64 time=0.060 ms
+64 bytes from 192.168.132.132: icmp_seq=3 ttl=64 time=0.060 ms
+
+--- 192.168.132.132 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2020ms
+rtt min/avg/max/mdev = 0.037/0.052/0.060/0.012 ms
+Host is up and running
+
+kiran@kiran:/shellscript$ sh untill-loop.sh
+Enter the ip address to ping: 192.168.132.136
+PING 192.168.132.136 (192.168.132.136) 56(84) bytes of data.
+From 192.168.132.132 icmp_seq=1 Destination Host Unreachable
+From 192.168.132.132 icmp_seq=2 Destination Host Unreachable
+From 192.168.132.132 icmp_seq=3 Destination Host Unreachable
+
+--- 192.168.132.136 ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2049ms
+pipe 3
+Host 192.168.132.136 is shutdown
+PING 192.168.132.136 (192.168.132.136) 56(84) bytes of data.
+From 192.168.132.132 icmp_seq=1 Destination Host Unreachable
+From 192.168.132.132 icmp_seq=2 Destination Host Unreachable
+From 192.168.132.132 icmp_seq=3 Destination Host Unreachable
+
+--- 192.168.132.136 ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2026ms
+pipe 3
+Host 192.168.132.136 is shutdown

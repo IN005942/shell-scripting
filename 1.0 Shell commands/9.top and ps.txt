@@ -1,0 +1,20 @@
+top:--->it provides a dynamic real time view of running system
+---------------------------------------------------------------
+c	--> it shows complete path of command
+k + enter PID	-->kill the process
+c	---> it shows the process in colors
+r  + enter PID   --->to increase the nice value
+1	--->detailed information of your cpu usage
+d	--->to change the refresh rate
+h	---> help
+l	---> to hide the first row
+shift+a	---> split into different rows
+
+kiran@kiran:~$ top -n 5		(iterate 5 times and exit)
+kiran@kiran:~$ top -p 6624 -n 3	(to iterate a perticular process)
+
+-------------------------------------------------------------------
+ps:
+---
+kiran@kiran:~$ ps -ef | grep tomcat
+

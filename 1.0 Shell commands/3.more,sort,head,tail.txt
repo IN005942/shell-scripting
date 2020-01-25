@@ -1,0 +1,92 @@
+more:
+-------
+more	-view the file on the full screen and by pressing the spacebar we will get the remaining file data one by one
+-----------------------------------------------
+root@kiran:/var/log# cat boot.log | more
+root@kiran:/var/log# more boot.log
+------------------------------------------------------------
+sort:
+-------
+sort	-Sorting the text
+	-u=sorting by alphabet
+	-r=Reversed sort
+	-n=column number
+	-k=column
+kiran@kiran:~/Desktop$ cat file5.txt
+1 apple 4
+3 mangos 2
+2 oranges 3
+4 bananas 1
+
+kiran@kiran:~/Desktop$ sort -nk3 file5.txt
+4 bananas 1
+3 mangos 2
+2 oranges 3
+1 apple 4
+
+kiran@kiran:~/Desktop$ sort -nk1 file5.txt
+1 apple 4
+2 oranges 3
+3 mangos 2
+4 bananas 1
+
+kiran@kiran:~/Desktop$ df -h | sort -nk2
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop1      1.0M  1.0M     0 100% /snap/gnome-logs/61
+/dev/loop5      1.0M  1.0M     0 100% /snap/gnome-logs/81
+tmpfs           1.5G     0  1.5G   0% /dev/shm
+tmpfs           1.5G     0  1.5G   0% /sys/fs/cgroup
+udev            1.5G     0  1.5G   0% /dev
+/dev/loop15     3.8M  3.8M     0 100% /snap/gnome-system-monitor/111
+/dev/loop3      3.8M  3.8M     0 100% /snap/gnome-system-monitor/100
+/dev/loop0      4.2M  4.2M     0 100% /snap/gnome-calculator/406
+/dev/loop9      4.3M  4.3M     0 100% /snap/gnome-calculator/544
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+
+-----------------------------------------------------------------------------------------
+head:
+-----
+kiran@kiran:~/Desktop$ head -3 file4.txt
+The fruit is apple
+apple is very good for the health
+Most of the peoples are interested to buy the apples because they are very good for the health
+
+kiran@kiran:~/Desktop$ cat file4.txt | head -4
+The fruit is apple
+apple is very good for the health
+Most of the peoples are interested to buy the apples because they are very good for the health
+In my childhood i used to eat apple everyday
+-------------------------------------------------------------------------------------------------
+tail:
+-----
+kiran@kiran:~/Desktop$ tail -2 file4.txt
+boot
+blot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

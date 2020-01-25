@@ -1,0 +1,165 @@
+whoami:
+-------
+kiran@kiran:~$ whoami
+kiran
+
+w:
+---
+kiran@kiran:~$ w
+ 12:18:14 up  2:03,  2 users,  load average: 0.11, 0.10, 0.02
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+kiran    :0       :0               10:17   ?xdm?   6:16   0.00s /usr/lib/gdm3/g
+kiran    pts/0    192.168.132.1    12:15    0.00s  0.07s  0.01s w
+
+id:
+---
+kiran@kiran:~$ id
+uid=1000(kiran) gid=1000(kiran) groups=1000(kiran),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lpadmin),126(sambashare)
+
+who:
+----
+kiran@kiran:~$ who
+kiran    :0           2020-01-06 10:17 (:0)
+kiran    pts/0        2020-01-06 12:15 (192.168.132.1)
+kiran@kiran:~$ who -r
+         run-level 5  2020-01-06 10:16
+kiran@kiran:~$ who -q
+kiran kiran
+# users=2
+kiran@kiran:~$ who -b
+         system boot  2020-01-06 10:15
+kiran@kiran:~$ who -u
+kiran    :0           2020-01-06 10:17   ?          1628 (:0)
+kiran    pts/0        2020-01-06 12:15   .          3269 (192.168.132.1)
+
+last:
+------
+kiran@kiran:~$ last
+kiran    pts/0        192.168.132.1    Mon Jan  6 12:15   still logged in
+kiran    pts/0        192.168.132.1    Mon Jan  6 10:18 - 12:15  (01:56)
+kiran    :0           :0               Mon Jan  6 10:17   still logged in
+reboot   system boot  5.0.0-37-generic Mon Jan  6 10:15   still running
+kiran    pts/0        192.168.132.1    Sun Jan  5 10:50 - 12:49  (01:59)
+kiran    :0           :0               Sun Jan  5 10:49 - 12:50  (02:00)
+reboot   system boot  5.0.0-37-generic Sun Jan  5 10:47 - 12:50  (02:02)
+kiran    pts/0        192.168.132.1    Sat Jan  4 11:04 - 13:27  (02:23)
+kiran    :0           :0               Sat Jan  4 11:02 - 13:27  (02:25)
+reboot   system boot  5.0.0-37-generic Sat Jan  4 11:00 - 13:27  (02:26)
+kiran    pts/0        192.168.132.1    Fri Jan  3 10:14 - 12:05  (01:51)
+kiran    :0           :0               Fri Jan  3 10:13 - 12:05  (01:52)
+reboot   system boot  5.0.0-37-generic Fri Jan  3 10:11 - 12:06  (01:54)
+kiran    pts/0        192.168.132.1    Thu Jan  2 09:53 - 12:24  (02:31)
+kiran    :0           :0               Thu Jan  2 09:52 - 12:25  (02:32)
+reboot   system boot  5.0.0-37-generic Thu Jan  2 09:51 - 12:25  (02:34)
+
+wtmp begins Wed Jan  1 23:49:31 2020
+
+finger:-->user detailed information
+-------
+
+/etc/passwd | grep root:
+-------------------------
+kiran@kiran:~$ cat /etc/passwd | grep root
+root:x:0:0:root:/root:/bin/bash
+
+uname:
+--------
+kiran@kiran:~$ uname -a
+Linux kiran 5.0.0-37-generic #40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+kiran@kiran:~$ uname -v
+#40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019
+kiran@kiran:~$ uname -s
+Linux
+kiran@kiran:~$ uname -i
+x86_64
+kiran@kiran:~$ uname -n
+kiran
+kiran@kiran:~$ uname -o
+GNU/Linux
+----------------------------------------------------------------------------------------------------------------------
+hostname:
+----------
+kiran@kiran:~$ hostname -f
+kiran
+kiran@kiran:~$ hostname -i
+127.0.1.1
+kiran@kiran:~$ hostnamectl status
+   Static hostname: kiran
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: d5be9a9b3cf64f7ba1d36fa7e4b6d30f
+           Boot ID: 160b49d9eb44494ebc234525feab688a
+    Virtualization: vmware
+  Operating System: Ubuntu 18.04.3 LTS
+            Kernel: Linux 5.0.0-37-generic
+      Architecture: x86-64
+
+--->To change the hostname perminantly
+ kiran@kiran:~$ hostname set-hostname kiran1 --static
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

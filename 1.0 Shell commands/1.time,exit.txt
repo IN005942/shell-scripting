@@ -1,0 +1,10 @@
+time:
+------
+$ time cp file.txt new/new1
+real    0m0.003s
+user    0m0.000s
+sys     0m0.002s
+
+exit:
+-----
+exit from the terminal

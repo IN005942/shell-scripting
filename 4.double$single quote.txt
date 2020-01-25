@@ -1,0 +1,24 @@
+#!/bin/bash
+#purpose:this is about the quotation
+#version:
+#created date: Wed Jan 1 23:24:52 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+VAR1=1234
+TEST=TestQuote
+
+#double Quotes
+echo "execute double quote VAR1 $TEST"
+
+#single quote
+echo 'execute single quote $VAR1 $TEST'
+
+#Reverse Quote
+echo "This is about the hostname: `hostname`"
+#END
+
+o/p:
+execute double quote VAR1 TestQuote
+execute single quote $VAR1 $TEST
+This is about the hostname: kiran

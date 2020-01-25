@@ -1,0 +1,162 @@
+tar:
+----
+kiran@kiran:~/Desktop$ ls
+awkexample  file2.txt  file5.txt  file8.txt  new2            simha.jpg
+file10.txt  file3.txt  file6.txt  file9.txt  ProjectJenkins  spring-petclinic
+file1.txt   file4.txt  file7.txt  new1       shellscript     sumawk
+kiran@kiran:~/Desktop$ tar -cvf archive.tar file*
+file10.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+kiran@kiran:~/Desktop$ ls
+archive.tar  file2.txt  file6.txt  new1            simha.jpg
+awkexample   file3.txt  file7.txt  new2            spring-petclinic
+file10.txt   file4.txt  file8.txt  ProjectJenkins  sumawk
+file1.txt    file5.txt  file9.txt  shellscript
+
+kiran@kiran:~/Desktop$ vi file2.txt
+kiran@kiran:~/Desktop$ tar -uvf archive.tar file*
+file2.txt	(here it is updating file2.txt only)
+------------------------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ tar -cvzf comoress.tar.gz file*
+file10.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+kiran@kiran:~/Desktop$ ls
+archive.tar      file1.txt  file5.txt  file9.txt       shellscript
+awkexample       file2.txt  file6.txt  new1            simha.jpg
+comoress.tar.gz  file3.txt  file7.txt  new2            spring-petclinic
+file10.txt       file4.txt  file8.txt  ProjectJenkins  sumawk
+kiran@kiran:~/Desktop$
+--------------------------------------------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ du -sh archive.tar
+20K     archive.tar
+kiran@kiran:~/Desktop$ du -sh comoress.tar.gz
+4.0K    comoress.tar.gz
+-----------------------------------------------------------------------
+kiran@kiran:~/Desktop$ tar -cjvf bunzip.tar.bz2 file*
+file10.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+kiran@kiran:~/Desktop$ ls
+archive.tar      file10.txt  file4.txt  file8.txt  ProjectJenkins    sumawk
+awkexample       file1.txt   file5.txt  file9.txt  shellscript
+bunzip.tar.bz2   file2.txt   file6.txt  new1       simha.jpg
+comoress.tar.gz  file3.txt   file7.txt  new2       spring-petclinic
+
+kiran@kiran:~/Desktop$ du -sh bunzip.tar.bz2
+4.0K    bunzip.tar.bz2
+
+
+kiran@kiran:~/Desktop$ tar -xvf archive.tar
+file10.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+file2.txt
+------------------------------------------------------------------------------
+--->below command shows the files inside the tar before unzip
+kiran@kiran:~/Desktop$ tar -tf comoress.tar.gz
+file10.txt
+file1.txt
+file2.txt
+file3.txt
+file4.txt
+file5.txt
+file6.txt
+file7.txt
+file8.txt
+file9.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

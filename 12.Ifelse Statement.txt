@@ -1,0 +1,47 @@
+If-else Statement:
+
+#!/bin/bash
+#purpose:This is about the if-else statement
+#version:
+#created date: Fri Jan 3 10:31:38 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value of a: \c"
+read -r a
+echo "Enter the value of b: \c"
+read -r b
+
+if [ $a -gt $b ]
+then
+        echo "$a is greater than $b"
+else
+        echo "$b is greater than $a"
+fi
+#END
+
+kiran@kiran:/shellscript$ sh if-else-statement.sh
+Enter the value of a: 10
+Enter the value of b: 5
+10 is greater than 5
+kiran@kiran:/shellscript$ sh if-else-statement.sh
+Enter the value of a: 5
+Enter the value of b: 8
+8 is greater than 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

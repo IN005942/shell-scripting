@@ -1,0 +1,49 @@
+while loop:
+--------------
+while [ condition ]
+do
+...
+...
+####
+done
+
+
+
+
+#!/bin/bash
+#purpose:Printing tables using the while
+#version:
+#created date: Fri Jan 3 11:33:40 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value: \c"
+read -r c
+i=1
+while [ $i -le 10 ]
+do
+        b=`expr $c \* $i`
+        echo "$c * $i = $b"
+        i=`expr $i + 1`
+done
+#END
+
+
+kiran@kiran:/shellscript$ sh while.sh
+Enter the value: 6
+6 * 1 = 6
+6 * 2 = 12
+6 * 3 = 18
+6 * 4 = 24
+6 * 5 = 30
+6 * 6 = 36
+6 * 7 = 42
+6 * 8 = 48
+6 * 9 = 54
+6 * 10 = 60
+
+
+
+
+
+

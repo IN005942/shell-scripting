@@ -1,0 +1,20 @@
+$ vi myfirstscript.sh
+
+#!/bin/bash---->(shebang: what ever below the shebang it could be interpreted by /bin/bash path)
+## this is myfistscript in this shell script video tutorial
+#START
+echo "welcome $USER"
+echo "your present workong directory is `pwd`"
+echo "Today date is `date`"
+#END
+
+execution paths:
+------------------
+$sh myfirstscript.sh
+$ ./myfirstscript.sh
+$ source myfirstscript.sh
+
+O/P:
+welcome kiran
+your present working directory is /home/kiran/Desktop/shellscript
+Today date is Wed Jan  1 23:02:27 IST 2020

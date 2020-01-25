@@ -1,0 +1,22 @@
+chmod:--->
+------
+d|rwx|rwx|r-x 2 kiran kiran  4096 Jan  1 23:11 shellscript
+d--->directory
+rwx--->represents the user
+rwx--->represents the group
+r-x--->represents the other
+
+r=4	u+x		g+w		o+w	
+w=2	u+w		g+r		o+r
+x=1	u+x		g+x		o+x
+---			g=rwx		o=rwx
+  7	u=rwx	
+
+chown:
+-------
+kiran@kiran:~/Desktop$ ls -lt
+drwxr-xr-x 4 root  root   4096 Dec 19 13:42 spring-petclinic
+
+kiran@kiran:~/Desktop$ chown root:kiran spring-petclinic
+drwxr-xr-x 4 root  kiran   4096 Dec 19 13:42 spring-petclinic
+

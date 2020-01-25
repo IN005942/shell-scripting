@@ -1,0 +1,118 @@
+---To write the multiple conditions, validate multiple condition and execute the statement
+	AND	(-a)	(&&)
+	OR	(-o)	(||)
+	NOT	(-n)	(!)
+AND:
+-----
+
+#!/bin/bash
+#purpose:Logicla AND using in the student marks
+#version:
+#created date: Thu Jan 2 11:50:24 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the maths marks: \c"
+read -r m
+echo "Enter the physics marks: \c"
+read -r p
+echo "Enter the marks of chemistry: \c"
+read -r c
+
+if test $m -ge 35 -a $p -ge 35 -a $c -ge 35
+then
+        echo "Congrats you have clear all the subjects"
+else
+        echo "Sorry you might lost one or more subjects"
+fi
+#END
+
+kiran@kiran:/shellscript$ sh LogicalAnd.sh
+Enter the maths marks: 35
+Enter the physics marks: 36
+Enter the marks of chemistry: 35
+Congrats you have clear all the subjects
+kiran@kiran:/shellscript$ sh LogicalAnd.sh
+Enter the maths marks: 25
+Enter the physics marks: 36
+Enter the marks of chemistry: 69
+Sorry you might lost one or more subjects
+---------------------------------------------------------------------------------------------------------------------
+--->If we want to use || symbol than we have to follow the below method
+#!bin/bash
+fi [[ $1 -lt 20 || $2 -ge 30 ]];
+then
+	echo "statement is true"
+else
+	echo "statement is false"
+fi
+
+$ sh oroperator.sh 21 32
+o/p:
+Statement is true
+-----------------------------------------------------------------------------------------------------------------------
+OR:
+----
+#!/bin/bash
+#purpose:Usage of Logical OR
+#version:
+#created date: Thu Jan 2 12:03:11 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value of a: \c"
+read -r a
+echo "Enter the value of b: \c"
+read -r b
+if [ $a -lt 20 -o $b -gt 30 ];
+then
+        echo "The Statement is true"
+else
+        echo "Sorry, Try again"
+fi
+#END
+
+kiran@kiran:/shellscript$ sh LogicalOR.sh
+Enter the value of a: 16
+Enter the value of b: 23
+The Statement is true
+kiran@kiran:/shellscript$ sh LogicalOR.sh
+Enter the value of a: 21
+Enter the value of b: 16
+Sorry, Try again
+kiran@kiran:/shellscript$ sh LogicalOR.sh
+Enter the value of a: 35
+Enter the value of b: 31
+The Statement is true
+----------------------------------------------------------------------------------------------------
+NOT:
+----
+#!bin/bash
+fi ! [[ $1 -lt 20 || $2 -ge 30 ]];
+then
+	echo "statement is true"
+else
+	echo "statement is false"
+fi
+
+$ sh oroperator.sh 21 25
+o/p:
+Statement is true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

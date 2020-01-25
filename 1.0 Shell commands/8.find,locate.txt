@@ -1,0 +1,126 @@
+locate:
+------------
+kiran@kiran:~$ locate file1.txt
+/home/kiran/Desktop/file1.txt
+/home/kiran/Desktop/new1/file1.txt
+
+kiran@kiran:~$ touch ravi
+kiran@kiran:~$ locate ravi
+-->here we are creating the file under root to get this file we need to use updatedb than use the command
+kiran@kiran:~$ updatedb
+kiran@kiran:~$ locate ravi
+-->now we will get this file
+
+find:--->find out the files and the directories in any location
+-------
+root@kiran:~# find /home -name file1.txt
+/home/kiran/Desktop/file1.txt
+/home/kiran/Desktop/new1/file1.txt
+
+root@kiran:~# find /home -name "file*"
+/home/kiran/Desktop/file3.txt
+/home/kiran/Desktop/file10.txt
+/home/kiran/Desktop/file9.txt
+/home/kiran/Desktop/file5.txt
+/home/kiran/Desktop/file1.txt
+/home/kiran/Desktop/file4.txt
+/home/kiran/Desktop/new1/file1.txt
+/home/kiran/Desktop/file2.txt
+/home/kiran/Desktop/file8.txt
+/home/kiran/Desktop/file7.txt
+/home/kiran/Desktop/file6.txt
+-------------------------------------------------------------
+f--->file names
+d--->directory
+---------------------------------------------------------------
+root@kiran:~# find /home -type f -name "file*.txt"
+/home/kiran/Desktop/file3.txt
+/home/kiran/Desktop/file10.txt
+/home/kiran/Desktop/file9.txt
+
+root@kiran:~# find /home -type d -name "file*.txt"
+---------------------------------------------------------------------------
+-iname ---> ignore the case
+
+root@kiran:~# find /home -iname FiLe1.txt
+/home/kiran/Desktop/file1.txt
+/home/kiran/Desktop/new1/file1.txt
+-----------------------------------------------------------------------------
+-not ---> except find out the all
+root@kiran:~# find /home -not -name file1.txt
+root@kiran:~# find /home ! -name file1.txt	(we can use ! instead of -not)
+--------------------------------------------------------------------------------
+--->find out the file based on the file permission
+
+kiran@kiran:~/Desktop$ find /home -type f -perm 777
+/home/kiran/Desktop/file1.txt
+/home/kiran/Desktop/file2.txt
+----------------------------------------------------------------------------------------------
+--->We can search for the multiple direcctory paths
+kiran@kiran:~$ find /etc/ /var/ /home/ -name file1.txt
+-------------------------------------------------------------------------------------------------
+-maxdepth --->this method is used to specify the method of permissions and file depth
+kiran@kiran:~$ find /home -maxdepth 1 -perm /u=r
+/home
+/home/kiran
+------------------------------------------------------------------------------------------------
+-mtime --->file modified time
+kiran@kiran:~$ find /home/ -mtime 10
+
+kiran@kiran:~$ find /home -mtime +10 -mtime -20 (last 10 days modified files)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

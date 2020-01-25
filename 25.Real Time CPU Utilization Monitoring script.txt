@@ -1,0 +1,48 @@
+How to monitor cpu utilizstion when it went to above 98% it should send alert, 90-98% Warning, below 90% it should not send any alert
+-------------------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+#purpose:Monitor cputilization
+#version:
+#created date: Sun Jan 5 12:14:53 IST 2020
+#modified date:										(-b-->batch mode,-d-->delay time)
+#author: nellore kiran kumat
+#START
+PATHS="/"
+HOSTNAME=$(hostname)
+CRITICAL=98
+WARNING=90
+CRITICALMAIL="yourmail@gmail.com"
+MAILWAR="yourwarnmail@gmail.com"
+mkdir -p /var/log/cputilhistory
+LOGFILE=/var/log/cputilhistory/cpusage-`date +%h%d%y`.log
+
+touch $LOGFILE
+
+for path in $PATHS
+do
+        CPULOAD=`top -b -n 2 -d1 | grep "Cpu(s)" | tail -n1 | awk '{print $2}' | awk -F . '{print $1}'`
+        if [ -n $WARNING -a -n $CRITICAL ]
+        then
+                if [ "$CPULOAD" -ge "$WARNING" -a "$CPULOAD" -lt "$CRITICAL" ]
+                then
+                        echo "`date "+%F %H:%M:%S"` WARNING - $CPULOAD on Host $HOSTNAME" >> $LOGFILE
+                        echo "Warning Cpuload $CPULOAD Host is $HOSTNAME" | mail -s "CPULOAD is Warning" $MAILWAR
+                        exit 1
+                elif [ "$CPULOAD" -ge "$CRITICAL" ]
+                then
+                        echo "`date "+%F %H:%M:%S"` CRITICAL - $CPULOAD on Host $HOSTNAME" >> $LOGFILE
+                        echo "Critical Cpuload $CPULOAD Host is $HOSTNAME" | mail -s "Cpuload is Critical" $CRITICALMAIL
+                        exit 2
+                else
+                        echo "`date "+F %H:%M:%S"` OK - $CPULOAD on $HOSTNAME" >> $LOGFILE
+                        exit 0
+                fi
+        fi
+done
+
+#END
+
+-b	----batch mode
+-n	----iterations
+-d1	----delay one second
+-n1	----last value

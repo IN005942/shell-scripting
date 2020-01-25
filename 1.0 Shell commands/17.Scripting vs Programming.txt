@@ -1,0 +1,31 @@
+Scripting							Programming
+---------							------------
+1.Write to automate a perticular task				1.One program can do many tasks
+2.Does not required any compile it is an interpretor		2.Must comile to execute files
+3.Does not required customized environment/setup to		3.Required customized environment to develop and compile code
+  develop script.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

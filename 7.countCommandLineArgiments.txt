@@ -1,0 +1,26 @@
+$#
+
+$vi countargs
+
+
+#!/bin/bash
+#purpose:counting the arguments
+#version:
+#created date: Thu Jan 2 10:36:24 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "the number of provided arguments are: $#"
+#END
+
+---> sh countargs.sh kiran kumar nellore student
+O/P:
+the number of provided arguments are: 4
+
+---->sh countargs.sh * -------------->(it will count the number of files in the shellscript directory)
+O/P:
+the number of provided arguments are: 5
+
+----> sh countargs.sh /etc/*
+O/P:
+the number of provided arguments are: 218

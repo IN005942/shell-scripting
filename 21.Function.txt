@@ -1,0 +1,34 @@
+Function:
+--------
+A Large programme can be split into small module each midule performs a specific task.Instead of writing code again and again we can call these modules whenever we want and use it.
+
+syntax:
+--------
+function name (){
+Statements
+values
+}
+name
+
+#!/bin/bash
+#purpose:Function Example, Taking backup of perticular file
+#version:
+#created date: Sat Jan 4 12:27:25 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+function takebackup (){
+        if [ -f $1 ]
+        then
+                BACKUP="/shellscript/$(basename ${1}).$(date +%F).$$"
+                echo "Backing up $1 to ${BACKUP}"
+                cp $1 $BACKUP
+        fi
+}
+takebackup /etc/hosts
+if [ $? -eq 0 ]
+then
+        echo "Backup Success"
+fi
+
+#END

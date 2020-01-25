@@ -1,0 +1,37 @@
+tr:
+----
+tr a-z A-Z
+tr a-z A-Z<file1
+tr A-Z a-z<file2
+cat file2|tr -d s
+
+kiran@kiran:~/Desktop$ tr a-z A-Z
+this is about the data
+THIS IS ABOUT THE DATA
+
+kiran@kiran:~/Desktop$ cat file6.txt
+THIS ALL ARE THE UPPER CASE CHARACTERS
+kiran@kiran:~/Desktop$ tr A-Z a-z < file6.txt
+this all are the upper case characters
+
+kiran@kiran:~/Desktop$ cat file6.txt | tr -d A		(-d  ---->   deletee A character)
+THIS LL RE THE UPPER CSE CHRCTERS
+
+kiran@kiran:~/Desktop$ echo "1234 are the numbers" | tr -d [:digit:]
+ are the numbers
+kiran@kiran:~/Desktop$ echo "This is the about tab" | tr [:space:] '\t'
+This    is      the     about   tab     kiran@kiran:~/Desktop$
+------------------------------------------------------------------------------------------------------------
+WC:
+---
+kiran@kiran:~/Desktop$ wc file4.txt
+ 27  89 482 file4.txt
+kiran@kiran:~/Desktop$ wc -l file4.txt
+27 file4.txt
+kiran@kiran:~/Desktop$ wc -c file4.txt
+482 file4.txt
+kiran@kiran:~/Desktop$ wc -w file4.txt
+89 file4.txt
+
+
+

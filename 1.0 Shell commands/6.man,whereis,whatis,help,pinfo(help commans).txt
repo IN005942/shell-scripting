@@ -1,0 +1,23 @@
+man:
+----
+whereis:
+--------
+root@kiran:~# whereis passwd
+passwd: /usr/bin/passwd /etc/passwd /usr/share/man/man5/passwd.5.gz /usr/share/man/man1/passwd.1ssl.gz /usr/share/man/man1/passwd.1.gz
+root@kiran:~# whereis man
+man: /usr/bin/man /usr/local/man /usr/share/man /usr/share/man/man1/man.1.gz /usr/share/man/man7/man.7.gz
+root@kiran:~# whereis useradd
+useradd: /usr/sbin/useradd /usr/share/man/man8/useradd.8.gz
+
+whatis:
+-------
+root@kiran:~# whatis passwd
+passwd (5)           - the password file
+passwd (1)           - change user password
+passwd (1ssl)        - compute password hashes
+root@kiran:~# whatis cat
+cat (1)              - concatenate files and print on the standard output
+
+pinfo:
+-------
+$ pinfo mkdir

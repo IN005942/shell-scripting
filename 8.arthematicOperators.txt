@@ -1,0 +1,91 @@
+--->Oneway of doing the arthematic operations are
+$vi arthmatic.sh
+
+#!/bin/bash
+#purpose:the arthematic operations are described
+#version:
+#created date: Thu Jan 2 10:52:38 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Please enter the value of a: \c"
+read -r a
+echo "please enter the value of b: \c"
+read -r b
+
+echo "a+b value is: $(($a+$b))"
+echo "a-b value is: $(($a-$b))"
+echo "a*b value is: $(($a*$b))"
+echo "a/b value is: $(($a/$b))"
+echo "a%b value is: $(($a%$b))"
+echo "cpmleted successfully"
+#END
+
+kiran@kiran:/shellscript$ sh arthematic.sh
+Please enter the value of a: 40
+please enter the value of b: 4
+a+b value is: 44
+a-b value is: 36
+a*b value is: 160
+a/b value is: 10
+a%b value is: 0
+cpmleted successfully
+------------------------------------------------------------------------------------------
+
+--->The otherway of doing the arthematic operations
+using "expr":
+
+$ vi exprArthematic.sh
+#!/bin/bash
+#purpose:Arthematic operation using expr command
+#version:
+#created date: Thu Jan 2 11:11:35 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value of a: \c"
+read -r a
+echo "Enter the value of b: \c"
+read -r b
+
+echo "addition is: `expr $a + $b`"
+echo "substraction is: `expr $a - $b`"
+echo "multiplication is: `expr $a \* $b`"
+echo "division is: `expr $a / $b`"
+echo "reminder is: `expr $a % $b`"
+echo "completed successfully"
+#END
+
+kiran@kiran:/shellscript$ sh exprArthematic.sh
+Enter the value of a: 40
+Enter the value of b: 4
+addition is: 44
+substraction is: 36
+multiplication is: 160
+division is: 10
+reminder is: 0
+completed successfully
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

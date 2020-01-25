@@ -1,0 +1,18 @@
+logger:
+--------
+#!/bin/bash
+#purpose:Log the messages from the script to the log file
+#version:1.0
+#created date: Sat Jan 11 10:36:55 IST 2020
+#author:kiran
+#start
+df -h > /tmp/dfh
+STATUS=`echo "$?"`
+if [ $STATUS -eq 0 ];then
+        logger "Successfully executed" -t LoggerScript -f /var/log/messages
+else
+        logger "Failed to execute df command" -t LoggerScript -f /var/log/messages
+fi
+#stop
+
+kumar@kumar:/shellscript$ tail -f /var/log/messages

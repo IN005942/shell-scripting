@@ -1,0 +1,47 @@
+continue statement:
+-------------------
+
+#!/bin/bash
+#purpose: While loop continiue statement
+#version:
+#created date: Sat Jan 4 11:36:49 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+opt=y
+while [ $opt = y -o $opt = Y ]
+do
+        echo "Enter the number: \c"
+        read -r num
+        if [ $num -le 50 ]
+        then
+                sq=`expr $num \* $num`
+                echo "The square of the number $num is : $sq"
+        else
+                echo "Number not in the given range"
+        fi
+        echo "Do you want to continue [y/n]: \c"
+        read -r wish
+        if [ $wish = y -o $wish = Y ]
+        then
+                continue
+        else
+                echo "Thank you for exiting.."
+                exit
+        fi
+done
+#END
+
+kiran@kiran:/shellscript$ sh continue-statement.sh
+Enter the number: 5
+The square of the number 5 is : 25
+Do you want to continue [y/n]: y
+Enter the number: 7
+The square of the number 7 is : 49
+Do you want to continue [y/n]: n
+Thank you for exiting..
+
+
+
+
+

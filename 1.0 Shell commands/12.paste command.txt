@@ -1,0 +1,38 @@
+paste:--->merging the different files  using the paste command
+------
+kiran@kiran:~/Desktop$ cat file7.txt
+1
+2
+3
+4
+kiran@kiran:~/Desktop$ cat file8.txt
+apple
+mango
+banana
+orange
+kiran@kiran:~/Desktop$
+kiran@kiran:~/Desktop$ paste file7.txt file8.txt
+1       apple
+2       mango
+3       banana
+4       orange
+--------------------------------------------------------------------
+-s	----> spliting the rows into colums and merge the files
+kiran@kiran:~/Desktop$ paste -s file7.txt file8.txt
+1       2       3       4
+apple   mango   banana  orange
+-----------------------------------------------------------------------
+-d	---> delimeter
+kiran@kiran:~/Desktop$ paste -d, -s file8.txt
+apple,mango ,banana,orange
+kiran@kiran:~/Desktop$ paste -d"#," -s file8.txt
+apple#mango ,banana#orange
+kiran@kiran:~/Desktop$ paste -d'\n' file7.txt file8.txt
+1
+apple
+2
+mango
+3
+banana
+4
+orange

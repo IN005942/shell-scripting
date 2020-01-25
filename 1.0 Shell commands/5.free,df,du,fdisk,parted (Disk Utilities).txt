@@ -1,0 +1,178 @@
+1.free -m, free -g, free -h, free -k, free -s 2, free-c 3
+2.df -h, df -hT, df -m, df -i, df -t ext4, df -a, df -T
+3.du -a, du -ah, du -sh, du -cbha --time
+4.fdisk -l, fdisk -v, fdisk /dev/sda
+5.parted /dev/sda unit GB print free
+-----------------------------------------------------------------------------------------------------------
+free:
+-----
+kiran@kiran:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:        3045520     2687300       95232        5968      262988      192764
+Swap:       2097148      724116     1373032
+kiran@kiran:~$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           2974        2624          93           5         256         188
+Swap:          2047         707        1340
+kiran@kiran:~$ free -g
+              total        used        free      shared  buff/cache   available
+Mem:              2           2           0           0           0           0
+Swap:             1           0           1
+kiran@kiran:~$ free -s 2	(-s 2 ---> every 2 seconds) (-c 4 ---> to see the utilization at 4 times)
+              total        used        free      shared  buff/cache   available
+Mem:        3045520     2687016       95248        5968      263256      193072
+Swap:       2097148      724116     1373032
+---------------------------------------------------------------------------------------------------------------------------
+df:-->it will give you the disk partition information
+------
+kiran@kiran:~$ df -h	(-h--->human readable format	-T-->type  -i---->inodes  -t ext4 --->to see only ext4 file system)
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.5G     0  1.5G   0% /dev
+tmpfs           298M  1.8M  296M   1% /run
+/dev/sda1        79G   11G   64G  14% /
+tmpfs           1.5G     0  1.5G   0% /dev/shm
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           1.5G     0  1.5G   0% /sys/fs/cgroup
+/dev/loop3      3.8M  3.8M     0 100% /snap/gnome-system-monitor/100
+-----------------------------------------------------------------------------------------------------------------------------------
+du:--->space
+---
+
+kiran@kiran:~$ du -sh .
+663M    .
+root@kiran:~# du -sh /etc
+14M     /etc
+root@kiran:~# du -a
+4       ./.bash_history
+4       ./.bashrc
+4       ./.cache
+4       ./.viminfo
+4       ./.local/share/nano
+8       ./.local/share
+12      ./.local
+4       ./.profile
+36      .
+root@kiran:~# du -ah
+4.0K    ./.bash_history
+4.0K    ./.bashrc
+4.0K    ./.cache
+4.0K    ./.viminfo
+4.0K    ./.local/share/nano
+8.0K    ./.local/share
+12K     ./.local
+4.0K    ./.profile
+36K     .
+root@kiran:~# du -cbha --time
+403     2020-01-06 11:08        ./.bash_history
+3.1K    2018-04-09 16:40        ./.bashrc
+4.0K    2019-08-06 00:34        ./.cache
+1.2K    2020-01-01 23:18        ./.viminfo
+4.0K    2019-12-18 11:19        ./.local/share/nano
+8.0K    2019-12-18 11:19        ./.local/share
+12K     2019-12-18 11:19        ./.local
+148     2015-08-17 21:00        ./.profile
+25K     2020-01-06 11:08        .
+25K     2020-01-06 11:08        total
+----------------------------------------------------------------------------------------------
+fdisk:--->if we want to create a new disk partitions
+root@kiran:~# fdisk -l /dev/sda
+Disk /dev/sda: 80 GiB, 85899345920 bytes, 167772160 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x62d2d338
+
+Device     Boot Start       End   Sectors Size Id Type
+/dev/sda1  *     2048 167770111 167768064  80G 83 Linux
+
+root@kiran:~# fdisk /dev/sda
+
+Welcome to fdisk (util-linux 2.31.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): l
+
+ 0  Empty           24  NEC DOS         81  Minix / old Lin bf  Solaris
+ 1  FAT12           27  Hidden NTFS Win 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extended  c7  Syrinx
+ 5  Extended        41  PPC PReP Boot   86  NTFS volume set da  Non-FS data
+ 6  FAT16           42  SFS             87  NTFS volume set db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Dell Utility
+ 8  AIX             4e  QNX4.x 2nd part 8e  Linux LVM       df  BootIt
+ 9  AIX bootable    4f  QNX4.x 3rd part 93  Amoeba          e1  DOS access
+ a  OS/2 Boot Manag 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor
+ c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad hi ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  Hidden FAT12    56  Golden Bow      a8  Darwin UFS      f0  Linux/PA-RISC b
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor
+14  Hidden FAT16 <3 61  SpeedStor       ab  Darwin boot     f4  SpeedStor
+16  Hidden FAT16    63  GNU HURD or Sys af  HFS / HFS+      f2  DOS secondary
+17  Hidden HPFS/NTF 64  Novell Netware  b7  BSDI fs         fb  VMware VMFS
+18  AST SmartSleep  65  Novell Netware  b8  BSDI swap       fc  VMware VMKCORE
+1b  Hidden W95 FAT3 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  Hidden W95 FAT3 75  PC/IX           bc  Acronis FAT32 L fe  LANstep
+1e  Hidden W95 FAT1 80  Old Minix       be  Solaris boot    ff  BBT
+
+Command (m for help): p
+Disk /dev/sda: 80 GiB, 85899345920 bytes, 167772160 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x62d2d338
+
+Device     Boot Start       End   Sectors Size Id Type
+/dev/sda1  *     2048 167770111 167768064  80G 83 Linux
+
+root@kiran:~# fdisk -v
+fdisk from util-linux 2.31.1
+------------------------------------------------------------------------------------------------------
+parted:---->after partioning our disk to know how much disk free space we have
+root@kiran:~# parted /dev/sda unit GB print free
+Model: VMware, VMware Virtual S (scsi)
+Disk /dev/sda: 85.9GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags:
+
+Number  Start   End     Size    Type     File system  Flags
+        0.00GB  0.00GB  0.00GB           Free Space
+ 1      0.00GB  85.9GB  85.9GB  primary  ext4         boot
+        85.9GB  85.9GB  0.00GB           Free Space
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

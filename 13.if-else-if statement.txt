@@ -1,0 +1,70 @@
+If-else-if Statement:
+
+if [ condition ]
+then
+..
+..
+elif [ condition2 ]
+then
+..
+..
+elif [ condition3 ]
+then
+..
+..
+else
+..
+..
+fi
+
+
+
+#!/bin/bash
+#purpose:This is aboit the if-elif-if statement
+#version:
+#created date: Fri Jan 3 10:49:03 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value of a: \c"
+read -r a
+echo "Enter the value of b: \c"
+read -r b
+echo "Enter the value of c: \c"
+read -r c
+echo "Enter the value of d: \c"
+read -r d
+
+if [ $a -gt $b -a $a -gt $c -a $a -gt $d ]
+then
+        echo "$a a is the big value"
+elif [ $b -gt $c -a $b -gt $d ]
+then
+        echo "$b b is the big value"
+elif [ $c -gt $d ]
+then
+        echo "$c c is the big value"
+else
+        echo "$d d is the big value"
+fi
+#END
+
+kiran@kiran:/shellscript$ sh if-else-if.sh
+Enter the value of a: 8
+Enter the value of b: 9
+Enter the value of c: 4
+Enter the value of d: 7
+9 b is the big value
+
+
+
+
+
+
+
+
+
+
+
+
+

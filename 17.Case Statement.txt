@@ -1,0 +1,62 @@
+Case Statement:
+----------------
+case value in
+1)....;;
+2)....;;
+3)....;;
+*)....;;
+esca
+
+
+#!/bin/bash
+#purpose:This is about the case statement
+#version:
+#created date: Sat Jan 4 11:12:03 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the value of a: \c"
+read -r a
+echo "Enter the value of b: \c"
+read -r b
+echo "1.sum of the value"
+echo "2.Substraction of value"
+echo "3.Multiplication of value"
+echo "4.Division of value"
+echo "5.Module division of value"
+
+echo "Enter any of the above number: \c"
+read -r ch
+case $ch in
+        1) echo "sum of $a and $b is :" `expr $a + $b`;;
+        2) echo "substraction of $a and $b is:" `expr $a - $b`;;
+        3) echo "Multiplication of $a and $b is:" `expr $a \* $b`;;
+        4) echo "division of $a and $b is:" `expr $a / $b`;;
+        5) echo "Module division of $a and $b is:" `expr $a % $b`;;
+        *) echo "Invalid option entered"
+esac
+#END
+
+kiran@kiran:/shellscript$ sh case-statement.sh
+Enter the value of a: 10
+Enter the value of b: 5
+1.sum of the value
+2.Substraction of value
+3.Multiplication of value
+4.Division of value
+5.Module division of value
+Enter any of the above number: 4
+division of 10 and 5 is: 2
+kiran@kiran:/shellscript$ sh case-statement.sh
+Enter the value of a: 4
+Enter the value of b: 2
+1.sum of the value
+2.Substraction of value
+3.Multiplication of value
+4.Division of value
+5.Module division of value
+Enter any of the above number: 3
+Multiplication of 4 and 2 is: 8
+
+
+

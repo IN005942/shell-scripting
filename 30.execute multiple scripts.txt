@@ -1,0 +1,7 @@
+Execute multiple scripts from single scripts:
+---------------------------------------------
+#START
+for servername in `cat /scripts/serverlist`
+do 
+	ssh kiran@192.168.132.132 sh /scripts/diskspace.sh
+done

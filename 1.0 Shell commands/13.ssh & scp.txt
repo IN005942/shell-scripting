@@ -1,0 +1,84 @@
+SSH:
+----
+--->SSH stands for secure shell
+--->Used to connect remote server in a secure way
+--->It uses symetric and asymetric algorithms
+--->Symmetric algorithm (also called as secret key) use the same key for both encryption and the decryption
+--->Asymetric algorithm (also called as public key) use different key both encryption and the decryption
+
+SSH Server Profile:
+------------------
+Protocol/Service Name: ssh/sshd
+Port number: 22
+Configuration File Path: /etc/ssh/sshd_config
+
+kiran@kiran:~/Desktop$ ssh kumar@192.168.132.136
+kiran@kiran:~$ cd .ssh/
+kiran@kiran:~/.ssh$ ls
+id_rsa  id_rsa.pub  known_hosts
+kiran@kiran:~/.ssh$ cat known_hosts
+|1|7mXPAe2cZOioKbPZMznVvsSPyns=|y+p5D48Ij2vzoxrv7Rq/pDH2MEs= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFLwqF406MVg824RqMq4tEzIcGf6+jiuLzGwy6Omubua0Zm3XrK8Rvd78QBvMVUVGWSxrH4CWc4WaaEJgnksF9o=
+---------------------------------------------------------------------------------------------------------------------------------------------
+kiran@kiran:~$ ssh-keygen -t rsa
+kiran@kiran:~$ cd .ssh/
+kiran@kiran:~/.ssh$ ls
+id_rsa  id_rsa.pub  known_hosts
+kiran@kiran:~/.ssh$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsiLnAea7UA2XPdhrjA4V17klR/1QNPy2dSi1EeRqPbgojckCXlf3UK45lJQVCiRTbMInP5wIZNd3htlBQFGDQFUwghpCruav7M6v0erlbq3EHxonl9FCKek7aOklvjNSEtG+6TWdKRxVkRUi+HySiwKQDNeBP30oH/BjXDdJD1MvjOdJzuEnfBHxqqU7C+ktO9opri6pAjgBOPLP9VqKRid3g4pGBcH9B+PqWGmDJa/6t0rg6ROEGuO48HNd1xDSkkHJc2/jBhHhVXOKXHh5M0RgH8SI0I/Ad0Qo9MQ9criIADxIUGncb6oyq3skC+W4V22+5lMRv22j2kjS5pRpd kiran@kiran
+
+copy the above key and paste it into the authorized_key on the remote server.Now it does not ask for the login credential to login into the remote server from the client server.
+--------------------------------------------------------------------------------------------------------------------------------------------
+SCP:--->secure copy
+----
+----------------------------------------------------------------------------------
+--->copy the file
+kiran@kiran:~$ scp file.txt 192.168.132.132:/temp
+----------------------------------------------------------------------------------
+--->copy the directory
+kiran@kiran:~$ scp -r Desktop 192.168.132.132:/temp
+------------------------------------------------------------
+--->copy multiple files
+-p	-->preserve a data(With the time and date)
+kiran@kiran:~/Desktop$ ls -lt
+-rwxrwxrwx 1 kiran kiran   129 Jan  7 11:14 file1.txt
+
+kiran@kiran:~/Desktop$ scp -vp file1.txt 192.168.132.136:/temp
+kiran@kiran:~/temp$ ls -la
+-rwxrwxrwx 1 kiran kiran   129 Jan  7 11:14 file1.txt
+-------------------------------------------------------------------------------------------
+---> to use the different port
+kiran@kiran:~/Desktop$ scp -P 22 file1.txt 192.168.132.136:/temp
+-------------------------------------------------------------------------------------------
+-compress the data
+kiran@kiran:~/Desktop$ scp -C file1.txt 192.168.132.136:/temp
+--------------------------------------------------------------------------------------------------
+--->copy the data to the server with some fixed kilobites
+kiran@kiran:~/Desktop$ scp -l 500 file1.txt 192.168.132.136:/temp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

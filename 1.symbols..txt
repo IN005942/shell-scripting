@@ -1,0 +1,22 @@
+	symbol		symbol name		Use
+	--------------------------------------------
+	-		minus			used in the arthematic operation
+	=		equal to			same	
+	<		Less than			same	
+	>		greater than			same	
+	?		question mark		to replace single character
+	/		back slash		used in the arthematic operation
+	\		forward slash			same
+	~		tild			Home direcctory path
+	`		reverse quote		to pass command to terminal
+	|		pipe			to another command output
+	{}		braces			to specify statement
+	[]		square braces		used in the arthematic operation	
+	()		round braces		to used to specify variables
+	*		star			multiple character replacement
+	&		AND			AND operator	
+	^		cap or caret		to grep text stating with
+	%		percentage		used in the arthimatic operation
+	$		dollar			call variable
+	#		hash			comment line and count total item
+	@		at sign			seperator

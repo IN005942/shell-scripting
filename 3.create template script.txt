@@ -1,0 +1,12 @@
+#!/bin/bash
+echo -e "please provide the file name you want to create: \c"
+read -r file
+touch /shellscript/$file.sh
+echo '#!/bin/bash' > /shellscript/$file.sh
+echo '#purpose:' >> /shellscript/$file.sh
+echo '#version: ' >> /shellscript/$file.sh
+echo '#created date:' `date` >> /shellscript/$file.sh
+echo '#modified date:' >> /shellscript/$file.sh
+echo '#author: nellore kiran kumat' >> /shellscript/$file.sh
+echo '#START' >> /shellscript/$file.sh
+echo '#END' >> /shellscript/$file.sh

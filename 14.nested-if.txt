@@ -1,0 +1,104 @@
+nested-if Statement:
+--------------------
+if [ condition1 ]; then
+....
+....
+	if [ condition2 ]; then
+	....	
+	....
+	else
+	....	
+	....
+	fi
+else
+....
+....
+fi
+
+
+#!/bin/bash
+#purpose:Finding the percentage of marks using nested-if
+#version:
+#created date: Fri Jan 3 11:09:35 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "Enter the marks of the Maths: \c"
+read -r m
+echo "Enter the marks of the Physics: \c"
+read -r p
+echo "Enter the marks of the Chemistry: \c"
+read -r c
+
+if [ $m -ge 35 -a $p -ge 35 -a $c -ge 35 ]
+then
+        total=`expr $m + $p + $c`
+        avg=`expr $total / 3`
+        echo "Total Marks are: $total"
+        echo "Avg marks are: $avg"
+        if [ $avg -ge 75 ]
+        then
+                echo "You got the Distinction"
+        elif [ $avg -ge 60 -a $avg -lt 75 ]
+        then
+                echo "You got the first class"
+        elif [ $avg -ge 50 -a $avg -lt 60 ]
+        then
+                echo "You got the second class"
+        elif [ $avg -ge 35 -a $avg -lt 50 ]
+        then
+                echo "You got the third class"
+        fi
+else
+        echo "Sorry You are failed"
+fi
+#END
+
+
+kiran@kiran:/shellscript$ sh nested-if.sh
+Enter the marks of the Maths: 90
+Enter the marks of the Physics: 96
+Enter the marks of the Chemistry: 96
+Total Marks are: 282
+Avg marks are: 94
+You got the Distinction
+kiran@kiran:/shellscript$ sh nested-if.sh
+Enter the marks of the Maths: 70
+Enter the marks of the Physics: 65
+Enter the marks of the Chemistry: 65
+Total Marks are: 200
+Avg marks are: 66
+You got the first class
+kiran@kiran:/shellscript$ sh nested-if.sh
+Enter the marks of the Maths: 55
+Enter the marks of the Physics: 55
+Enter the marks of the Chemistry: 55
+Total Marks are: 165
+Avg marks are: 55
+You got the second class
+kiran@kiran:/shellscript$ sh nested-if.sh
+Enter the marks of the Maths: 36
+Enter the marks of the Physics: 36
+Enter the marks of the Chemistry: 36
+Total Marks are: 108
+Avg marks are: 36
+You got the third class
+kiran@kiran:/shellscript$ sh nested-if.sh
+Enter the marks of the Maths: 96
+Enter the marks of the Physics: 96
+Enter the marks of the Chemistry: 25
+Sorry You are failed
+
+
+
+
+
+
+
+
+
+
+
+
+
+

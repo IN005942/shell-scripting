@@ -1,0 +1,46 @@
+crontab:--->scheduling the jobs
+--------
+* * * * *
+minute(0-59)
+hour (0-23)
+day of month(1-31)
+month (1-12)
+day of week(0-6)(sunday=0 or 7)
+------------------------------------------------------------------
+--->to create cron job
+kiran@kiran:~$ crontab -e
+# m h  dom mon dow   command
+*/1 * * * * echo "shell scripting tutorial" >> /tmp/shell1
+---------------------------------------------------------
+--->to list out crontabs
+kiran@kiran:~$ crontab -l
+# m h  dom mon dow   command
+*/1 * * * * echo "shell scripting tutorial" >> /tmp/shell1
+--------------------------------------------------------------------
+kiran@kiran:~$ crontab -e
+30 10 * * 1 echo "every monday job" >> /tmp/everymonday.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

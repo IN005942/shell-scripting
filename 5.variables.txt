@@ -1,0 +1,40 @@
+--->Variable name must begin with the letter
+--->space does not allowed
+--->underscore can be allowed
+--->no special characters in the variable
+
+$vi variable
+#!/bin/bash
+#purpose:This is about the variable. and how it can help
+#version: 1.0
+#created date: Wed Jan 1 23:41:35 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+A=10
+Ba=10
+BA=23
+HOSTNAME=$(hostname)
+DATE=`date`
+data_value=interger
+the@value=notview
+
+echo "the value of A is: $A"
+echo "the value of Ba is: $Ba"
+echo "the value of BA is: $BA"
+echo "the hostname is: $HOSTNAME"
+echo "the date is: $DATE"
+echo "the data_value is:$data_value"
+echo "the@value is: $the@value"
+#END
+
+O/P:
+variables.sh: 14: variables.sh: the@value=notview: not found
+the value of A is: 10
+the value of Ba is: 10
+the value of BA is: 23
+the hostname is: kiran
+the date is: Wed Jan  1 23:48:59 IST 2020
+the data_value is:interger
+the@value is: @value
+

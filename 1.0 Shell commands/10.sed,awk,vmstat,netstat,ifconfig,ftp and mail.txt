@@ -1,0 +1,233 @@
+sed:--->sed is stream editor used for the modified files in linux or unix
+------------------------------------------------------------------------------
+s	-->string replacer
+---------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ cat file1.txt
+This is about the tutorial
+kiran present learning the linux
+good student
+somtimes he is very weird
+kiran@kiran:~/Desktop$ sed 's/kiran/kumar/' file1.txt
+This is about the tutorial
+kumar present learning the linux
+good student
+somtimes he is very weird
+---------------------------------------------------------------------------
+g	---> to change the all the occurences
+
+kiran@kiran:~/Desktop$ sed 's/kiran/kumar/g' file1.txt
+This is about the tutorial
+kumar present learning the linux
+good student
+somtimes he is very weird
+kumar is very handsome
+beautiful boy kumar
+----------------------------------------------------------------------------
+-i	---> to change the file perminantly
+kiran@kiran:~/Desktop$ sed -i 's/kiran/kumar/g' file1.txt
+-------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ sed '2 s/present/attend/' file1.txt
+This is about the tutorial
+kumar attend learning the linux----	(here present replaced with attend)
+good student
+somtimes he is very weird
+kumar is very handsome
+beautiful boy kumar
+--------------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ sed -i '3 d' file1.txt---->(third line deleted perminently)
+-----------------------------------------------------------------------------------
+
+awk:--->it will provide you to print the coloms and rows
+-----------------------------------------------------------
+kiran@kiran:~/Desktop$ cat awkexample | awk '{ print $3,$6 }'
+kiran Jan
+kiran Jan
+kiran Jan
+kiran Jan
+kiran Jan
+kiran Jan
+kiran Jan
+kiran Jan
+---------------------------------------------------------------
+--->printing sum of 7th colom
+kiran@kiran:~/Desktop$ awk 'BEGIN {sum=0} {sum=sum+$7} END {print sum}' awkexample
+144
+-----------------------------------------------------------------------
+kiran@kiran:~/Desktop$ vi sumawk
+kiran@kiran:~/Desktop$ cat sumawk
+#!/bin/bash -f
+BEGIN {sum=0}
+{sum=sum+$7}
+END {print sum}
+kiran@kiran:~/Desktop$ awk -f sumawk awkexample
+144
+---------------------------------------------------------------------------
+kiran@kiran:~/Desktop$ awk '{ if($3 == "kiran") print $0;}' awkexample
+drwxr-xr-x  7 kiran kiran  4096 Jan  7 11:14 .
+drwxr-xr-x 23 kiran kiran  4096 Jan  7 09:51 ..
+-rw-rw-r--  1 kiran kiran     0 Jan  6 10:19 file10.txt
+-rwxrwxrwx  1 kiran kiran   129 Jan  7 11:14 file1.txt
+-rwxrwxrwx  1 kiran kiran    73 Jan  6 10:26 file2.txt
+-rw-rw-r--  1 kiran kiran    69 Jan  6 10:26 file3.txt
+-rw-rw-r--  1 kiran kiran   482 Jan  6 10:52 file4.txt
+-rw-rw-r--  1 kiran kiran    45 Jan  6 11:09 file5.txt
+-rw-rw-r--  1 kiran kiran    39 Jan  6 11:20 file6.txt
+
+$0	---> it will print entire your line
+----------------------------------------------------------------------
+
+vmstat:--->tool that report about your machine
+-----------------------------------------------
+kiran@kiran:~/Desktop$ vmstat -a
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free  inact active   si   so    bi    bo   in   cs us sy id wa st
+ 0  0 153344  72180 595180 1860988    2   24   219   101  167  561  3  2 93  1  0
+
+kiran@kiran:~/Desktop$ vmstat -f
+         9042 forks
+---> below code display the slabs information
+kiran@kiran:~/Desktop$ vmstat -m
+
+---->to get exact timestamp
+kiran@kiran:~/Desktop$ vmstat -t
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu----- -----timestamp-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st                 IST
+ 2  0 153344  71692  95760 294488    2   23   215   100  166  558  3  2 94  1  0 2020-01-07 11:32:34
+----------------------------------------------------------------------------------------------------------
+
+netstat:--->it shows all the listening ports
+--------
+kiran@kiran:~/Desktop$ netstat -tunlp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -           
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -           
+tcp        0      0 127.0.0.1:32000         0.0.0.0:*               LISTEN      -           
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -           
+tcp6       0      0 :::22                   :::*                    LISTEN      -           
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -           
+udp        0      0 0.0.0.0:39053           0.0.0.0:*                           -           
+udp        0      0 0.0.0.0:631             0.0.0.0:*                           -           
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -           
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -           
+udp6       0      0 :::5353                 :::*                        
+---------------------------------------------------------------------------------------------------
+
+ftp:-->to tranfer files
+--------------------------------------------------------------------------------------------------
+mail:
+-----
+kumar@kumar:~$ mail -s "Hello admin" kiran@192.168.132.132
+kumar@kumar:~$ echo "Testing emails" | mail -s "Hello Admin" kiran@192.168.132.132
+kumar@kumar:~$ mail -s "Hello admin" kiran@192.168.132.132 < awkexample
+kumar@kumar:~$ mail -s "Hello admin" kiran@192.168.132.132 -a awkexample
+kumar@kumar:~$ mail -s "Hello admin" kiran@192.168.132.132 -c kumar@localhost < awkexample
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

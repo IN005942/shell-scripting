@@ -1,0 +1,77 @@
+for loop:
+--------------
+for (variable) in (values in variables)
+do
+echo (variable)
+done
+
+$vi hostfile
+localhost
+192.168.132.136
+192.168.132.132
+google.com
+
+
+#!/bin/bash
+#purpose:The ping example for the for loop
+#version:
+#created date: Fri Jan 3 11:51:16 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+for i in `cat hostfile`
+do
+        ping -c 1 $i
+        valid=`echo $?`
+        if [ $valid -ge 1 ]
+        then
+                echo "$i host is not reachable"
+        else
+                echo "$i host is up"
+        fi
+done
+#END
+
+kiran@kiran:/shellscript$ sh for-loop.sh
+PING localhost (127.0.0.1) 56(84) bytes of data.
+64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.014 ms
+
+--- localhost ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms
+localhost host is up
+PING 192.168.132.136 (192.168.132.136) 56(84) bytes of data.
+From 192.168.132.132 icmp_seq=1 Destination Host Unreachable
+
+--- 192.168.132.136 ping statistics ---
+1 packets transmitted, 0 received, +1 errors, 100% packet loss, time 0ms
+
+192.168.132.136 host is not reachable
+ping: google.com: Name or service not known
+google.com host is not reachable
+PING 192.168.132.132 (192.168.132.132) 56(84) bytes of data.
+64 bytes from 192.168.132.132: icmp_seq=1 ttl=64 time=0.037 ms
+
+--- 192.168.132.132 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.037/0.037/0.037/0.000 ms
+192.168.132.132 host is up
+---------------------------------------------------------------------------------------------------------------------------------------------
+simple for loop example:
+-----------------------
+
+for i in 1 2 3 4 5
+do
+echo $i
+done
+
+o/p:
+1
+2
+3
+4
+5
+
+
+
+

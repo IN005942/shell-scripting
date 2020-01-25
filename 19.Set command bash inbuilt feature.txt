@@ -1,0 +1,29 @@
+Set asssigns its argumrents to the positional parameters
+----------------------------------------------------------
+#!/bin/bash
+#purpose:Set assign its arguments to the positional parameters
+#version:
+#created date: Sat Jan 4 11:52:09 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+set `date`
+echo "Today is $1"
+echo "Month is $2"
+echo "Date is $3"
+echo "Time H:M:S is $4"
+echo "Time zone is $5"
+echo "Year is $6"
+set -x
+#END
+
+kiran@kiran:/shellscript$ sh set-bash-feature.sh
+Today is Sat
+Month is Jan
+Date is 4
+Time H:M:S is 11:56:07
+Time zone is IST
+Year is 2020
+
+
+

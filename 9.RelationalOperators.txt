@@ -1,0 +1,62 @@
+----To compare the numbers---------
+	-lt	---	less than(<)
+	-le	---	less than or equal to(<=)
+	-gt	---	greater than(>)
+	-ge	---	greater than or equal to(=>)
+	-eq	---	equal to(=)
+	-ne	---	not equal to(!=)
+
+vi relationaloperators.sh
+#!/bin/bash
+#purpose:Relational operators examples
+#version:
+#created date: Thu Jan 2 11:28:00 IST 2020
+#modified date:
+#author: nellore kiran kumat
+#START
+echo "enter the value of a: \c"
+read -r a
+echo "enter the value of b: \c"
+read -r b
+
+test $a -lt $b;echo "$?";
+test $a -le $b;echo "$?";
+test $a -gt $b;echo "$?";
+test $a -ge $b;echo "$?";
+test $a -eq $b;echo "$?";
+test $a -ne $b;echo "$?";
+#END
+
+kiran@kiran:/shellscript$ sh relationalOperators.sh
+enter the value of a: 6
+enter the value of b: 3
+1
+1
+0
+0
+1
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

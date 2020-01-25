@@ -1,0 +1,28 @@
+IFS(Internal field seperator)
+------------------------------:
+#!/bin/bash
+#purpose:Internal field sepearator
+#version
+#created date: Fri Jan 10 11:49:44 IST 2020
+#author:kiran
+#start
+LINE=`cat /etc/passwd | grep $1`
+IFS=:
+set $LINE
+echo "User name = $1"
+echo "Password = $2"
+echo "UID = $3"
+echo "GID = $4"
+echo "Descriptio = $5"
+echo "HomeDirectory = $6"
+echo "Current shell = $7"
+#stop
+
+kumar@kumar:/shellscript$ sh IFS.sh kumar
+User name = kumar
+Password = x
+UID = 1000
+GID = 1000
+Descriptio = kumar,,,
+HomeDirectory = /home/kumar
+Current shell = /bin/bash

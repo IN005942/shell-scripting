@@ -1,0 +1,33 @@
+cut:----> we can cut the number of bite we want
+---
+kiran@kiran:~$ echo "kiran" | cut -b 3
+r
+kiran@kiran:~$ echo "kiran" | cut -b 1-4
+kira
+kiran@kiran:~$ echo "kiran" | cut -b 2-4
+ira
+
+kiran@kiran:~/Desktop$ cat file1.txt
+This is about the tutorial
+kumar present learning the linux
+somtimes he is very weird
+kumar is very handsome
+beautiful boy kumar
+kiran@kiran:~/Desktop$ cat file1.txt | cut -c 1
+T
+k
+s
+k
+b
+kiran@kiran:~/Desktop$ cat file1.txt | cut -c 1,5,7
+T s
+krp
+sie
+kri
+btf
+kiran@kiran:~/Desktop$ cat file1.txt | cut -c3-
+is is about the tutorial
+mar present learning the linux
+mtimes he is very weird
+mar is very handsome
+autiful boy kumar
